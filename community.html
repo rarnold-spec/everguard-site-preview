@@ -832,7 +832,7 @@ section{position:relative;isolation:isolate}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);align-items:center}
 .duo > *{min-width:0}
 /* program facts */
-.pfacts{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #eceee9;border-radius:var(--r-lg);overflow:hidden;background:#fff;box-shadow:var(--sh-1)}
+.pfacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));border:1px solid #eceee9;border-radius:var(--r-lg);overflow:hidden;background:#fff;box-shadow:var(--sh-1)}
 .pfacts div{padding:28px 26px;border-left:1px solid #eceee9}
 .pfacts div:first-child{border-left:0}
 .pfacts small{display:block;font:800 11.5px var(--head);letter-spacing:.16em;text-transform:uppercase;color:#8a8f85;margin-bottom:10px}
@@ -1020,7 +1020,53 @@ footer{background:#0c1409;color:#a5b09b;padding:88px 0 40px}
  .tabbar a.c{color:var(--green)}
  .pvtag{display:none!important}
 }
-</style>
+
+.offer{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;background:linear-gradient(115deg,#1B2C12 0%,#2F4A1F 100%);color:#fff;border-radius:var(--r-lg);padding:30px 36px;box-shadow:var(--sh-2);position:relative;overflow:hidden}
+.offer::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(rgba(168,208,58,.25),transparent 70%)}
+.offer .o-badge{display:flex;flex-direction:column;align-items:center;justify-content:center;width:96px;height:96px;border-radius:50%;background:var(--lime);color:var(--green-xd);box-shadow:0 0 0 6px rgba(168,208,58,.22)}
+.offer .o-badge svg{width:22px;height:22px;margin-bottom:2px}
+.offer .o-badge b{font:900 17px/1 var(--head);letter-spacing:-.01em}
+.offer h3{font-size:clamp(20px,1.9vw,26px);font-weight:900;letter-spacing:-.02em;color:#fff;margin-bottom:4px}
+.offer p{color:#cfdcc2;font-size:16px;margin:0}
+.offer .btn{position:relative;z-index:1}
+.offer.compact{grid-template-columns:auto 1fr;padding:18px 20px;gap:16px;border-radius:18px;margin-bottom:18px}
+.offer.compact .o-badge{width:64px;height:64px}.offer.compact .o-badge svg{display:none}.offer.compact .o-badge b{font-size:14px}
+.offer.compact h3{font-size:17px}.offer.compact p{font-size:14px}
+.ppill{display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;background:rgba(245,130,32,.12);border:1px solid rgba(245,130,32,.35);color:#7a3c06;border-radius:999px;padding:9px 16px;font:700 13.5px var(--head)}
+.ppill b{font-weight:900;color:var(--orange-d);font-size:15px}
+.ppill i{width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.5}
+.ppill.dk{background:rgba(168,208,58,.12);border-color:rgba(168,208,58,.4);color:#e4f3b5}.ppill.dk b{color:var(--lime)}
+.hx .ppill{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22);color:#e6efdc;backdrop-filter:blur(8px)}.hx .ppill b{color:var(--orange)}
+.qw-price{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#fff6ec;border:1px solid rgba(245,130,32,.3);border-radius:12px;padding:10px 14px;margin:-4px 0 18px;font:700 13px var(--head);color:#7a3c06}
+.qw-price b{font:900 15px var(--head);color:var(--orange-d)}
+.qw-price span.p5{background:var(--green);color:#fff;border-radius:999px;padding:4px 10px;font-size:11.5px;letter-spacing:.04em;white-space:nowrap}
+.tchips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.tchip{font:700 13px var(--head);color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:7px 13px;backdrop-filter:blur(6px)}
+.tchip.ri{background:var(--lime);color:var(--green-xd);border-color:var(--lime);font-weight:800}
+.zipchk{display:flex;gap:10px;max-width:460px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:6px;border-radius:999px;backdrop-filter:blur(8px)}
+.zipchk input{flex:1;min-width:0;border:0;background:transparent;color:#fff;font:700 17px var(--head);padding:0 16px;outline:0;letter-spacing:.06em}
+.zipchk input::placeholder{color:#cfdcc2;font-weight:600;letter-spacing:0}
+.zipchk .btn{padding:15px 22px;font-size:13px;white-space:nowrap}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.zipres{display:none;margin-top:14px;max-width:520px;border-radius:14px;padding:13px 16px;font-size:15px;line-height:1.5}
+.zipres.show{display:block}
+.zipres.ok{background:rgba(168,208,58,.18);border:1px solid rgba(168,208,58,.55);color:#f0f8dc}
+.zipres.no{background:rgba(245,130,32,.16);border:1px solid rgba(245,130,32,.5);color:#ffe6cf}
+.zipres.warn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff}
+.zipres a{color:#fff;font-weight:800}
+.claims{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:34px}
+.claims span{display:inline-flex;align-items:baseline;gap:8px;background:#fff;border:1px solid #eceee9;border-radius:16px;padding:14px 20px;box-shadow:var(--sh-1);font:800 15px var(--head)}
+.claims span b{font:900 26px var(--head);color:var(--green);letter-spacing:-.02em}
+@media (max-width:720px){
+ .offer{grid-template-columns:1fr;text-align:center;justify-items:center;padding:28px 22px;gap:16px}
+ .offer.compact{grid-template-columns:auto 1fr;text-align:left;justify-items:start}
+ .zipchk{flex-direction:column;border-radius:20px;padding:8px}
+ .zipchk input{padding:12px 12px;text-align:center}
+ .area-band{min-height:0}.area-band .in{padding:32px 22px}
+ .ppill{font-size:12.5px;padding:8px 13px}
+}
+.steps.n5{grid-template-columns:repeat(5,1fr);gap:20px}.steps.n5 .stp{padding:28px 22px}.steps.n5 .num{font-size:52px}
+@media (max-width:1100px){.steps.n5{grid-template-columns:1fr 1fr}}</style>
 </head>
 <body>
 <div style="background:#F58220;color:#fff;font:700 12px/1.3 Montserrat,Arial,sans-serif;text-align:center;padding:7px 10px;letter-spacing:.05em">PREVIEW, NOT LIVE &middot; Sample redesign of everguard-pros.com. Forms are disabled.</div>
@@ -1053,7 +1099,7 @@ footer{background:#0c1409;color:#a5b09b;padding:88px 0 40px}
   <div class="sec-head center rv"><span class="eyebrow">Our Community</span><h2 class="h2">How We <em>Give Back</em></h2><p class="lead">From local sports programs to environmental initiatives, we aim to make a lasting positive impact in the areas we serve.</p></div>
   <div class="cards3 icards"><div class="icard rv" style="--d:0.0s"><div class="th"><img src="img/soccer-900.webp" srcset="img/soccer-900.webp 900w, img/soccer-1600.webp 1600w" sizes="(max-width:720px) 82vw, 33vw" width="1600" height="1067" alt="Supporting Inclusive Athletics" loading="lazy" decoding="async"></div><div class="bd"><span class=meta>Athletics</span><h3>Supporting Inclusive Athletics</h3><p>We&rsquo;re proud to support the Special Olympics, which offers inclusive athletic opportunities to people of all ages and abilities.</p></div></div><div class="icard rv" style="--d:0.08s"><div class="th"><img src="img/flower-900.webp" srcset="img/flower-900.webp 900w, img/flower-1600.webp 1000w" sizes="(max-width:720px) 82vw, 33vw" width="1000" height="665" alt="Honoring Community Legacy" loading="lazy" decoding="async"></div><div class="bd"><span class=meta>Legacy</span><h3>Honoring Community Legacy</h3><p>We work alongside the Arlington Rose Foundation, which preserves the beauty and connection community gardens provide through scholarships and education.</p></div></div><div class="icard rv" style="--d:0.16s"><div class="th"><img src="img/tech_lawn-900.webp" srcset="img/tech_lawn-900.webp 900w, img/tech_lawn-1600.webp 1600w" sizes="(max-width:720px) 82vw, 33vw" width="1600" height="1067" alt="Giving Back Where It Matters" loading="lazy" decoding="async"></div><div class="bd"><span class=meta>Free Spray Day</span><h3>Giving Back Where It Matters</h3><p>Every year we host Free Spray Day in high-risk neighborhoods, offering complimentary deer, rabbit, tick and mosquito protection.</p></div></div></div>
   <div style="height:26px"></div>
-  <div class="cards3 icards" style="grid-template-columns:repeat(2,1fr)"><div class="icard rv" style="--d:0.0s"><div class="th"><img src="img/garden-900.webp" srcset="img/garden-900.webp 900w, img/garden-1600.webp 1600w" sizes="(max-width:720px) 82vw, 33vw" width="1600" height="900" alt="Community Cleanups &amp; Green Events" loading="lazy" decoding="async"></div><div class="bd"><span class=meta>Green Events</span><h3>Community Cleanups &amp; Green Events</h3><p>We take part in local green-space cleanups, tree plantings and public garden projects, side by side with residents.</p></div></div><div class="icard rv" style="--d:0.08s"><div class="th"><img src="img/girl_swing-900.webp" srcset="img/girl_swing-900.webp 900w, img/girl_swing-1600.webp 1536w" sizes="(max-width:720px) 82vw, 33vw" width="1536" height="864" alt="Youth Outreach &amp; Education" loading="lazy" decoding="async"></div><div class="bd"><span class=meta>Education</span><h3>Youth Outreach &amp; Education</h3><p>We host workshops for schools and community centers on wildlife coexistence, safe pest control and sustainable gardening.</p></div></div></div>
+  <div class="cards3 icards" style="grid-template-columns:repeat(2,1fr)"><div class="icard rv" style="--d:0.0s"><div class="th"><img src="img/garden-900.webp" srcset="img/garden-900.webp 900w, img/garden-1600.webp 1600w" sizes="(max-width:720px) 82vw, 33vw" width="1600" height="900" alt="Community Cleanups &amp; Green Events" loading="lazy" decoding="async"></div><div class="bd"><span class=meta>Green Events</span><h3>Community Cleanups &amp; Green Events</h3><p>We regularly participate in local green-space cleanups, tree plantings and public garden projects, working side by side with residents.</p></div></div><div class="icard rv" style="--d:0.08s"><div class="th"><img src="img/girl_swing-900.webp" srcset="img/girl_swing-900.webp 900w, img/girl_swing-1600.webp 1536w" sizes="(max-width:720px) 82vw, 33vw" width="1536" height="864" alt="Youth Outreach &amp; Education" loading="lazy" decoding="async"></div><div class="bd"><span class=meta>Education</span><h3>Youth Outreach &amp; Education</h3><p>We regularly host workshops for schools and community centers on wildlife coexistence, safe pest control and sustainable gardening.</p></div></div></div>
 </div></section>
 <section class="section bg-light"><div class="wrap center rv" style="max-width:860px"><span class="eyebrow">Building a Safer, Greener Future</span><h2 class="h2">Leading <em>by Example</em></h2><p class="lead">Our dedication to sustainability, local partnerships and giving back is what sets us apart as a business that values not just customers but the communities we serve.</p></div></section><section class="cta-x"><img src="img/truck3-900.webp" srcset="img/truck3-900.webp 900w, img/truck3-1600.webp 1600w" sizes="100vw" width="1600" height="1067" alt="" loading="lazy" decoding="async"><div class="wrap rv">
   <h2>Ready for a Yard You Can <em>Enjoy Again?</em></h2><p>Get a free, no-obligation quote for deer, rabbit, tick and mosquito protection. We&rsquo;ll build a seasonal plan around your property.</p>
@@ -1065,7 +1111,7 @@ footer{background:#0c1409;color:#a5b09b;padding:88px 0 40px}
   <div class="wrap">
     <div class="foot-cols">
       <div><img src="https://everguard-pros.com/wp-content/uploads/2026/11/eg-lp-everguard-logo-white-fixed.png" alt="Everguard Repellent Pros" loading="lazy" width="800" height="241">
-        <address>Eco-friendly deer, rabbit, tick and mosquito protection for Rhode Island homeowners.<br><a href="tel:+14017928900">401-792-8900</a><br><a href="mailto:ri@everguard-pros.com">ri@everguard-pros.com</a></address><div class="social"><a href="https://www.instagram.com/everguardpros" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a><a href="https://www.facebook.com/profile.php?id=61583450362436" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8Z"/></svg></a></div></div>
+        <address>Eco-friendly deer, rabbit, tick and mosquito protection. Serving all of Rhode Island plus nearby Connecticut and Massachusetts.<br><a href="tel:+14017928900">401-792-8900</a><br><a href="mailto:ri@everguard-pros.com">ri@everguard-pros.com</a></address><div class="social"><a href="https://www.instagram.com/everguardpros" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a><a href="https://www.facebook.com/profile.php?id=61583450362436" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8Z"/></svg></a></div></div>
       <div><h4>Company</h4><ul><li><a href="our-story.html">Our Story</a></li><li><a href="community.html">Community</a></li><li><a href="testimonials.html">What Our Clients Say</a></li></ul></div><div><h4>Why Us?</h4><ul><li><a href="how-it-works.html">How It Works</a></li><li><a href="always-eco-friendly.html">Always Eco-Friendly</a></li><li><a href="respray-guarantee.html">Respray Guarantee</a></li></ul></div><div><h4>Services</h4><ul><li><a href="deer-repellent.html">Deer Repellent</a></li><li><a href="rabbit-control.html">Rabbit Control</a></li><li><a href="tick-control.html">Tick Control</a></li><li><a href="mosquito-control.html">Mosquito Control</a></li></ul></div>
       <div><h4>Connect</h4><ul><li><a href="blog.html">Blog</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a href="contact.html#quote">Get a Free Quote</a></li><li><a href="https://everguard-pros.com/franchise/">Franchise Opportunities</a></li></ul></div>
     </div>
